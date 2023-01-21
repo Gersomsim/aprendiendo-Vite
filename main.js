@@ -4,6 +4,17 @@ import imageStyle from './img.module.css';
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 import rayo from './rayo.jpeg'
+import data from "./data.json";
+
+const modules = import.meta.glob('./modules/*.js');
+
+console.log(modules);
+
+for (const path in modules) {
+  modules[path]().then(m =>{
+    m.load();
+  })
+}
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -22,6 +33,7 @@ document.querySelector('#app').innerHTML = `
     </p>
     <button id="btn">Click Me</button>
     <img id="img">
+    <pre>${JSON.stringify(data)}</pre>
   </div>
 `
 
