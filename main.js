@@ -5,6 +5,7 @@ import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
 import rayo from './rayo.jpeg'
 import data from "./data.json";
+import suma from "./suma"
 
 const modules = import.meta.glob('./modules/*.js');
 
@@ -15,6 +16,8 @@ for (const path in modules) {
     m.load();
   })
 }
+
+console.log( suma(2,2) );
 
 document.querySelector('#app').innerHTML = `
   <div>
