@@ -1,7 +1,9 @@
 import './style.css'
 import buttonStyle from './button.module.css';
+import imageStyle from './img.module.css';
 import javascriptLogo from './javascript.svg'
 import { setupCounter } from './counter.js'
+import rayo from './rayo.jpeg'
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -19,9 +21,13 @@ document.querySelector('#app').innerHTML = `
       Click on the Vite logo to learn more
     </p>
     <button id="btn">Click Me</button>
+    <img id="img">
   </div>
 `
 
 setupCounter(document.querySelector('#counter'))
 document.querySelector('#btn').className = buttonStyle.btn;
+const img = document.querySelector('#img');
+img.src = rayo;
+img.className = imageStyle.img;
 
